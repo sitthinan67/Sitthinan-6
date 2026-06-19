@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะของ Sitthinan">
-    <title>ความภาคภูมิใจของ Sitthinan</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะของ Sitthinan">
+    <title>ความภาคภูมิใจของ Sitthinan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="cursor-blur"></div>
+    <!-- ส่วนหัวของเว็บ -->
+    <header>
+        <h1>สวัสดี! ผมคือ Sitthinan</h1>
+        <p>นี่คือผลงานและความภาคภูมิใจของผม</p>
+    </header>
 
-    <header>
-        <h1>สวัสดี! ผมคือ Sitthinan</h1>
-        <p>นี่คือผลงานและความภาคภูมิใจของผม</p>
-    </header>
+    <!-- ส่วนเกี่ยวกับตัวเอง -->
+    <section id="about">
+        <h2>เกี่ยวกับผม</h2>
+        <p>ผมเป็นนักศึกษาชั้นมัธยมศึกษาปีที่6 และชอบในการส่องกล้องจุลทรรศน์และชอบการท้าทายสิ่งใหม่ๆ</p>
+    </section>
 
-    <section id="about">
-        <h2>เกี่ยวกับผม</h2>
-        <p>ผมเป็นนักศึกษาชั้นมัธยมศึกษาปีที่ 6 และชอบในการส่องกล้องจุลทรรศน์และชอบการท้าทายสิ่งใหม่ๆ</p>
-        <img src="IMG_0964.jpeg" alt="นี่คือรูปร่างลักษณะของผม" width="50%">
-    </section>
+    <!-- ส่วนแสดงผลงาน -->
+    <section id="projects">
+        <h2>ผลงานของผม</h2>
 
-    <section id="projects">
-        <h2>ผลงานของผม</h2>
+        <div class="project">
+            <h3>เว็บไซต์ Portfolio</h3>
+            <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถของผม</p>
+        </div>
 
-        <div class="project">
-            <h3>เว็บไซต์ Portfolio</h3>
-            <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถของผม</p>
-        </div>
+        <div class="project">
+            <h3>สอบchemtest</h3>
+            <p>การสอบchemtestเป้นการสอบเคมีระดับประเทศ การสอบครั้งนี้ทำให้ผมมีประสบการณ์ในการสอบเป้นอย่างมาก</p>
+        </div>
+    </section>
 
-        <div class="project">
-            <h3>สอบ chemtest</h3>
-            <p>การสอบ chemtest เป็นการสอบเคมีระดับประเทศ การสอบครั้งนี้ทำให้ผมมีประสบการณ์ในการสอบเป็นอย่างมาก</p>
-            <img src="IMG_1089.jpeg" alt="ภาพประกอบการสอบ chemtest" width="50%">
-        </div> 
-    </section>
+    <!-- ส่วนแสดงทักษะ -->
+    <section id="skills">
+        <h2>ทักษะของผม</h2>
+        <ul>
+            <li>การส่องกล้องจุลทรรศน์</li>
+            <li>มีภาวะความเป็นผู้นำ เพราะเคยเป้นหัวหน้าห้อง</li>
+            <li>Git และ GitHub</li>
+            <li>มีเทคนิคในการทำแลปต่างๆ</li>
+        </ul>
+    </section>
 
-    <section id="skills">
-        <h2>ทักษะของผม</h2>
-        <ul>
-            <li>การส่องกล้องจุลทรรศน์</li>
-            <li>มีภาวะความเป็นผู้นำ เพราะเคยเป็นหัวหน้าห้อง</li>
-            <li>Git และ GitHub</li>
-            <li>มีเทคนิคในการทำแลปต่างๆ</li>
-        </ul>
-    </section>
+    <!-- ส่วนติดต่อและลิขสิทธิ์ -->
+    <footer>
+        <p>
+            ติดต่อผมได้ที่:
+            <a href="mailto:rmi880013@gmail.com">rmi880013@gmail.com</a>
+        </p>
+        <p>&copy; <span id="year"></span> Sitthinan. All rights reserved.</p>
+    </footer>
 
-    <footer>
-        <p>
-            ติดต่อผมได้ที่:
-            <a href="mailto:rmi880013@gmail.com">rmi880013@gmail.com</a>
-        </p>
-        <p>&copy; <span id="year"></span> Sitthinan. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- ลิงก์ไปยัง JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
