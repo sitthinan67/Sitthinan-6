@@ -20,41 +20,38 @@ class Particle {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        // กำหนดความเร็วและทิศทางแบบสุ่มรอบทิศทาง (ระเบิดวงกลม)
+        // กำหนดความเร็วและทิศทางแบบสุ่มรอบทิศทาง
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 8 + 4; // ความเร็วพุ่งตัวออก
+        const speed = Math.random() * 10 + 5; // เพิ่มความเร็วให้ระเบิดแรงขึ้น
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
         
-        this.radius = Math.random() * 4 + 2; // ขนาดของสะเก็ด
-        // สุ่มสีโทนนีออนวิทยาศาสตร์ (ฟ้า/น้ำเงิน/ขาว)
+        this.radius = Math.random() * 5 + 2; // ขนาดของสะเก็ด
+        // สีโทนนีออนวิทยาศาสตร์
         const colors = ['#38bdf8', '#0ea5e9', '#7dd3fc', '#ffffff'];
         this.color = colors[Math.floor(Math.random() * colors.length)];
-        this.alpha = 1; // ค่าความโปร่งแสงเริ่มต้น
-        this.decay = Math.random() * 0.015 + 0.01; // ความเร็วในการจางหาย
+        this.alpha = 1; 
+        this.decay = Math.random() * 0.02 + 0.015; // ความเร็วในการจางหาย
     }
 
-    // วาดสะเก็ดระเบิดลงบนจอ
     draw() {
         ctx.save();
         ctx.globalAlpha = this.alpha;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        // ใส่เอฟเฟกต์เรืองแสงให้ตัวระเบิด
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 15; // เพิ่มความเรืองแสงให้ชัดขึ้น
         ctx.shadowColor = this.color;
         ctx.fill();
         ctx.restore();
     }
 
-    // อัปเดตพิกัดและการจางหาย
     update() {
         this.x += this.vx;
         this.y += this.vy;
-        this.vx *= 0.98; // แรงต้านอากาศทำให้ช้าลงเรื่อยๆ
-        this.vy *= 0.98;
-        this.alpha -= this.decay; // ค่อยๆ จางลง
+        this.vx *= 0.96; // แรงต้านอากาศ
+        this.vy *= 0.96;
+        this.alpha -= this.decay; 
     }
 }
 
@@ -63,8 +60,7 @@ function createExplosion() {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     
-    // สร้างเศษสะเก็ดระเบิดจำนวน 120 ชิ้น
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 150; i++) { // เพิ่มจำนวนสะเก็ดเป็น 150 ชิ้นให้ตูมตามขึ้น
         particles.push(new Particle(centerX, centerY));
     }
 }
@@ -77,23 +73,19 @@ function animateExplosion() {
         particles[i].update();
         particles[i].draw();
         
-        // ถ้าจางจนมองไม่เห็นแล้ว ให้ลบออกจากระบบเพื่อประหยัดแรมคอมพิวเตอร์
         if (particles[i].alpha <= 0) {
             particles.splice(i, 1);
         }
     }
     
-    // ถ้ายังมีเศษระเบิดเหลืออยู่ ให้ทำแอนิเมชันต่อ
     if (particles.length > 0) {
         requestAnimationFrame(animateExplosion);
     }
 }
 
-// สั่งให้ระเบิดทำงานทันทีที่โหลดหน้าเว็บเสร็จ
-window.addEventListener('DOMContentLoaded', () => {
-    createExplosion();
-    animateExplosion();
-});
+// สั่งให้ระเบิดทำงานทันทีที่โค้ดบรรทัดนี้ถูกอ่าน (ไม่ต้องรอโหลดหน้าเว็บเสร็จ)
+createExplosion();
+animateExplosion();
 
 
 // ==========================================
@@ -102,12 +94,17 @@ window.addEventListener('DOMContentLoaded', () => {
 const cursorBlur = document.querySelector('.cursor-blur');
 
 document.addEventListener('mousemove', (e) => {
-    cursorBlur.style.left = e.clientX + 'px';
-    cursorBlur.style.top = e.clientY + 'px';
+    if(cursorBlur) {
+        cursorBlur.style.left = e.clientX + 'px';
+        cursorBlur.style.top = e.clientY + 'px';
+    }
 });
 
 
 // ==========================================
 // 3. ดึงปีปัจจุบันมาแสดงตรง Footer โดยอัตโนมัติ
 // ==========================================
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearSpan = document.getElementById("year");
+if(yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
