@@ -1,58 +1,93 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
 
-    /* แบ่งพื้นหลังครึ่งซ้าย-ขวา */
+    /* แบ่งครึ่งสี */
     background: linear-gradient(
-        to right,
-        #ff0000 0%,
-        #ff0000 50%,
+        90deg,
+        #ff003c 0%,
+        #ff003c 50%,
         #0099ff 50%,
         #0099ff 100%
     );
-
-    color: #333;
-    position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
 }
 
-/* แสงวิ่งรอบขอบจอ */
+/* แสงเบลอสวยๆ */
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
-    padding: 6px;
-    background: linear-gradient(
-        90deg,
-        red,
-        red,
-        blue,
-        blue,
-        red
-    );
-    background-size: 400% 400%;
-    animation: borderRun 4s linear infinite;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    pointer-events: none;
-    z-index: 9999;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255,0,60,0.6), transparent 30%),
+        radial-gradient(circle at 80% 50%, rgba(0,153,255,0.6), transparent 30%);
+    filter: blur(80px);
+    z-index: -2;
 }
 
-/* เอฟเฟกต์วิ่ง */
-@keyframes borderRun {
+/* ขอบ Neon วิ่งรอบจอ */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    border: 4px solid transparent;
+    border-image: linear-gradient(
+        90deg,
+        #ff003c,
+        #ff4d6d,
+        #0099ff,
+        #66ccff,
+        #ff003c
+    ) 1;
+    animation: neonBorder 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes neonBorder {
     0% {
-        background-position: 0% 50%;
+        filter:
+            drop-shadow(0 0 10px #ff003c)
+            drop-shadow(0 0 20px #ff003c);
     }
+
+    50% {
+        filter:
+            drop-shadow(0 0 10px #0099ff)
+            drop-shadow(0 0 20px #0099ff);
+    }
+
     100% {
-        background-position: 400% 50%;
+        filter:
+            drop-shadow(0 0 10px #ff003c)
+            drop-shadow(0 0 20px #ff003c);
     }
+}
+
+/* กล่องเนื้อหา */
+section {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.15);
+    transition: 0.4s;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.2),
+        0 0 40px rgba(255,255,255,0.3);
+}
+
+/* หัวข้อ */
+h2 {
+    color: white;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff;
 }
