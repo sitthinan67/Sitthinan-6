@@ -1,55 +1,154 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะของ Sitthinan">
-    <title>ความภาคภูมิใจของ Sitthinan</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์ Portfolio แสดงผลงานและทักษะของ Sitthinan นักเรียนชั้นมัธยมศึกษาปีที่ 6 ผู้สนใจด้านวิทยาศาสตร์และเคมี">
+    <meta name="author" content="Sitthinan">
+    <title>ความภาคภูมิใจของ Sitthinan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ส่วนหัวของเว็บ -->
-    <header>
-        <h1>สวัสดี! ผมคือ Sitthinan</h1>
-        <p>นี่คือผลงานและความภาคภูมิใจของผม</p>
-    </header>
-    <!-- ส่วนเกี่ยวกับตัวเอง -->
-    <section id="about">
-        <h2>เกี่ยวกับผม</h2>
-        <p>ผมเป็นนักศึกษาชั้นมัธยมศึกษาปีที่6 และชอบในการส่องกล้องจุลทรรศน์และชอบการท้าทายสิ่งใหม่ๆ</p>
-    </section>
-    <!-- ส่วนแสดงผลงาน -->
-    <section id="projects">
-        <h2>ผลงานของผม</h2>
-        <div class="project">
-            <h3>เว็บไซต์ Portfolio</h3>
-            <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถของผม</p>
-        </div>
-        <div class="project">
-            <h3>สอบchemtest</h3>
-            <p>การสอบchemtestเป้นการสอบเคมีระดับประเทศ การสอบครั้งนี้ทำให้ผมมีประสบการณ์ในการสอบ</p>
-           <img src="IMG_1089.jpeg" alt="ภาพการสอบ" width="50%"> 
-        </div>
-    </section>
-    <!-- ส่วนแสดงทักษะ -->
-    <section id="skills">
-        <h2>ทักษะของผม</h2>
-        <ul>
-            <li>การส่องกล้องจุลทรรศน์</li>
-            <li>มีภาวะความเป็นผู้นำ เพราะเคยเป้นหัวหน้าห้อง</li>
-            <li>Git และ GitHub</li>
-            <li>มีเทคนิคในการทำแลปต่างๆ</li>
-        </ul>
-    </section>
-    <!-- ส่วนติดต่อและลิขสิทธิ์ -->
-    <footer>
-        <p>
-            ติดต่อผมได้ที่:
-            <a href="mailto:rmi880013@gmail.com">rmi880013@gmail.com</a></p>
-        <p>&copy; <span id="year"></span> Sitthinan. All rights reserved.</p>
-    </footer>
-    <!-- ลิงก์ไปยัง JavaScript -->
-    <script src="script.js"></script>
 
+    <div class="shooting-star star1"></div>
+    <div class="shooting-star star2"></div>
+    <div class="shooting-star star3"></div>
+    <div class="shooting-star star4"></div>
+
+    <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหาหลัก</a>
+
+    <header>
+        <h1>สวัสดี! ผมคือ Sitthinan</h1>
+        <p>นี่คือผลงานและความภาคภูมิใจของผม</p>
+        <nav>
+            <ul>
+                <li><a href="#about">เกี่ยวกับผม</a></li>
+                <li><a href="#projects">ผลงาน</a></li>
+                <li><a href="#computer-projects">ผลงานคอมพิวเตอร์</a></li>
+                <li><a href="#skills">ทักษะ</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section id="about" class="reveal">
+            <h2>เกี่ยวกับผม</h2>
+            <p>
+                ผมเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 ที่มีความสนใจในด้านวิทยาศาสตร์
+                โดยเฉพาะการส่องกล้องจุลทรรศน์ ผมชอบเรียนรู้สิ่งใหม่ ๆ และกล้าที่จะ
+                ท้าทายตัวเองอยู่เสมอ
+            </p>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2>ผลงานของผม</h2>
+
+            <article class="project">
+                <h3>เว็บไซต์ Portfolio</h3>
+                <p>
+                    เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถ
+                    ด้านการพัฒนาเว็บไซต์ของผม
+                </p>
+            </article>
+
+            <article class="project">
+                <h3>การสอบ Chem Test</h3>
+                <p>
+                    การสอบ Chem Test เป็นการสอบวิชาเคมีในระดับประเทศ การสอบครั้งนี้
+                    ทำให้ผมได้รับประสบการณ์และความมั่นใจในการสอบมากขึ้น
+                </p>
+                <figure>
+                    <img
+                        src="IMG_1089.jpeg"
+                        alt="ภาพระหว่างการสอบ Chem Test"
+                        width="50%"
+                        loading="lazy"
+                    >
+                    <figcaption>ระหว่างการสอบ Chem Test ระดับประเทศ</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <!-- ===== Section ใหม่: ผลงานวิชาคอมพิวเตอร์ ===== -->
+        <section id="computer-projects" class="reveal">
+            <h2>ผลงานวิชาคอมพิวเตอร์</h2>
+
+            <article class="project">
+                <h3>ผลงานที่ 1</h3>
+                <p>คำอธิบายผลงานที่ 1 ของคุณ</p>
+                <figure>
+                    <img src="comp1.jpg" alt="คำอธิบายภาพผลงานที่ 1" width="50%" loading="lazy">
+                    <figcaption>คำบรรยายภาพผลงานที่ 1</figcaption>
+                </figure>
+            </article>
+
+            <article class="project">
+                <h3>ผลงานที่ 2</h3>
+                <p>คำอธิบายผลงานที่ 2 ของคุณ</p>
+                <figure>
+                    <img src="comp2.jpg" alt="คำอธิบายภาพผลงานที่ 2" width="50%" loading="lazy">
+                    <figcaption>คำบรรยายภาพผลงานที่ 2</figcaption>
+                </figure>
+            </article>
+
+            <article class="project">
+                <h3>ผลงานที่ 3</h3>
+                <p>คำอธิบายผลงานที่ 3 ของคุณ</p>
+                <figure>
+                    <img src="comp3.jpg" alt="คำอธิบายภาพผลงานที่ 3" width="50%" loading="lazy">
+                    <figcaption>คำบรรยายภาพผลงานที่ 3</figcaption>
+                </figure>
+            </article>
+
+            <article class="project">
+                <h3>ผลงานที่ 4</h3>
+                <p>คำอธิบายผลงานที่ 4 ของคุณ</p>
+                <figure>
+                    <img src="comp4.jpg" alt="คำอธิบายภาพผลงานที่ 4" width="50%" loading="lazy">
+                    <figcaption>คำบรรยายภาพผลงานที่ 4</figcaption>
+                </figure>
+            </article>
+        </section>
+        <!-- ===== สิ้นสุด Section ใหม่ ===== -->
+
+        <section id="skills" class="reveal">
+            <h2>ทักษะของผม</h2>
+
+            <div class="skill-bar">
+                <span class="skill-label">การส่องกล้องจุลทรรศน์</span>
+                <div class="bar-bg"><div class="bar-fill" data-percent="90"></div></div>
+            </div>
+            <div class="skill-bar">
+                <span class="skill-label">ภาวะความเป็นผู้นำ</span>
+                <div class="bar-bg"><div class="bar-fill" data-percent="80"></div></div>
+            </div>
+            <div class="skill-bar">
+                <span class="skill-label">Git และ GitHub</span>
+                <div class="bar-bg"><div class="bar-fill" data-percent="70"></div></div>
+            </div>
+            <div class="skill-bar">
+                <span class="skill-label">เทคนิคการทำแล็บ</span>
+                <div class="bar-bg"><div class="bar-fill" data-percent="85"></div></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="reveal">
+        <p>
+            ติดต่อผมได้ที่:
+            <a href="mailto:rmi880013@gmail.com">rmi880013@gmail.com</a>
+        </p>
+        <p>&copy; <span id="year"></span> Sitthinan. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
